@@ -1,11 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.PriorityQueue;
 
-public class MainJavaPQ {
+public class MainHeap {
     public static void main(String[] args) {
-
-        PriorityQueue<Paciente> cola = new PriorityQueue<>();
+        VectorHeap<Paciente> cola = new VectorHeap<>();
 
         try {
             BufferedReader br = new BufferedReader(new FileReader("pacientes.txt"));
@@ -27,10 +25,10 @@ public class MainJavaPQ {
             e.printStackTrace();
         }
 
-        System.out.println("Orden de atención (Java PQ):");
+        System.out.println("Orden de atención:");
 
         while (!cola.isEmpty()) {
-            System.out.println(cola.poll());
+            System.out.println(cola.remove());
         }
     }
 }
